@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+.container2 {
+  width: 95%;
+  margin: 0 auto;
+}
+@media (min-width: 1500px) {
+  .container2 {
+    width: 1440px;
+    margin: auto;
+  }
+}
+.header {
+  box-shadow: 0 4px 20px 0 rgba(232, 232, 232, 0.61);
+}
+.header2 {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: -100%;
+  background: #fff;
+  transition: 0.5s all;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 710px) {
+  #check:checked ~ .header2 {
+    left: 0;
+  }
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: left;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
