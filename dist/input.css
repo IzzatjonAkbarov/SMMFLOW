@@ -31,6 +31,7 @@
   transition: 0.5s all;
   justify-content: center;
   align-items: center;
+  overflow-y: scroll;
 }
 @media (max-width: 710px) {
   #check:checked ~ .header2 {
@@ -49,4 +50,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* Background while loading */
+  z-index: 1000;
+}
+
+.loader {
+  width: 120px;
+  height: 20px;
+  border-radius: 20px;
+  background: linear-gradient(to right, #1c639d, #5585c3, #0f3488);
+  background-size: 300%;
+  animation: color-fill 2s infinite;
+}
+
+@keyframes color-fill {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Content Hidden Initially */
+#content {
+  display: none;
 }

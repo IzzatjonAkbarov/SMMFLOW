@@ -8,6 +8,7 @@
       rel="shortcut icon"
       href="./src/assets/svg/logo.svg"
       type="image/x-icon" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
@@ -21,7 +22,13 @@
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body class="">
-    <header class="header py-[26px]">
+    <div class="loader-container" id="loader">
+      <div class="loader"></div>
+    </div>
+    <div id="content" style="display: none">
+      <!-- Your main content goes here -->
+    </div>
+    <header data-aos="fade-down" class="header py-[26px]">
       <div class="container2 flex items-center justify-between">
         <div class="flex items-center justify-between gap-[38px]">
           <div class="flex items-center gap-2">
@@ -595,9 +602,33 @@
               class="border rounded-[10px] p-4 pr-2 bg-[#f8f8f9] w-full text-ellipsis"
               name=""
               id="">
+              <option value="">Какие способы оплаты вы принимаете?</option>
               <option value="">
                 Почему цены на ваши услуги ниже, чем у конкурентов?
               </option>
+              <option value="">
+                Почему цены на ваши услуги ниже, чем у конкурентов?
+              </option>
+            </select>
+          </div>
+          <div class="flex items-center gap-3 max-[1006px]:flex-col">
+            <select
+              class="border rounded-[10px] p-4 pr-2 bg-[#f8f8f9] w-full text-ellipsis"
+              name=""
+              id="">
+              <option value="">Как вы гарантируете качество услуг?</option>
+              <option value="">
+                Почему цены на ваши услуги ниже, чем у конкурентов?
+              </option>
+              <option value="">
+                Почему цены на ваши услуги ниже, чем у конкурентов?
+              </option>
+            </select>
+            <select
+              class="border rounded-[10px] p-4 pr-2 bg-[#f8f8f9] w-full text-ellipsis"
+              name=""
+              id="">
+              <option value="">Меня не заблокируют?</option>
               <option value="">
                 Почему цены на ваши услуги ниже, чем у конкурентов?
               </option>
@@ -612,7 +643,7 @@
               name=""
               id="">
               <option value="">
-                Почему цены на ваши услуги ниже, чем у конкурентов?
+                Как я могу узнать о статусе моего заказа?
               </option>
               <option value="">
                 Почему цены на ваши услуги ниже, чем у конкурентов?
@@ -625,9 +656,7 @@
               class="border rounded-[10px] p-4 pr-2 bg-[#f8f8f9] w-full text-ellipsis"
               name=""
               id="">
-              <option value="">
-                Почему цены на ваши услуги ниже, чем у конкурентов?
-              </option>
+              <option value="">Как я могу связаться с вами?</option>
               <option value="">
                 Почему цены на ваши услуги ниже, чем у конкурентов?
               </option>
@@ -641,39 +670,7 @@
               class="border rounded-[10px] p-4 pr-2 bg-[#f8f8f9] w-full text-ellipsis"
               name=""
               id="">
-              <option value="">
-                Почему цены на ваши услуги ниже, чем у конкурентов?
-              </option>
-              <option value="">
-                Почему цены на ваши услуги ниже, чем у конкурентов?
-              </option>
-              <option value="">
-                Почему цены на ваши услуги ниже, чем у конкурентов?
-              </option>
-            </select>
-            <select
-              class="border rounded-[10px] p-4 pr-2 bg-[#f8f8f9] w-full text-ellipsis"
-              name=""
-              id="">
-              <option value="">
-                Почему цены на ваши услуги ниже, чем у конкурентов?
-              </option>
-              <option value="">
-                Почему цены на ваши услуги ниже, чем у конкурентов?
-              </option>
-              <option value="">
-                Почему цены на ваши услуги ниже, чем у конкурентов?
-              </option>
-            </select>
-          </div>
-          <div class="flex items-center gap-3 max-[1006px]:flex-col">
-            <select
-              class="border rounded-[10px] p-4 pr-2 bg-[#f8f8f9] w-full text-ellipsis"
-              name=""
-              id="">
-              <option value="">
-                Почему цены на ваши услуги ниже, чем у конкурентов?
-              </option>
+              <option value="">Как быстро выполняется заказ?</option>
               <option value="">
                 Почему цены на ваши услуги ниже, чем у конкурентов?
               </option>
@@ -686,7 +683,7 @@
               name=""
               id="">
               <option value="">
-                Почему цены на ваши услуги ниже, чем у конкурентов?
+                Что произойдет, если мои подписчики или лайки уйдут?
               </option>
               <option value="">
                 Почему цены на ваши услуги ниже, чем у конкурентов?
@@ -724,7 +721,11 @@
             </div>
           </div>
           <div class="flex flex-col gap-3">
-            <a class="hover:text-blue-800" href="">Каталог услуг</a>
+            <a
+              class="hover:text-blue-800 transition-all hover:underline"
+              href=""
+              >Каталог услуг</a
+            >
             <a class="hover:text-[blue] transition-all hover:underline" href=""
               >Преимущества</a
             >
@@ -753,7 +754,7 @@
             <p class="hover:text-[blue] transition-all hover:underline">
               Нужна помощь?
             </p>
-            <button class="p-4 font-bold bg-[#ebebeb] rounded">
+            <button class="p-4 font-bold bg-[#ebebeb] rounded active:scale-110">
               Онлайн-чат
             </button>
             <a class="hover:text-[blue] transition-all hover:underline" href=""
@@ -798,6 +799,18 @@
           clickable: true,
         },
       });
+    </script>
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("content").style.display = "block";
+        }, 1000); // 1 seconds
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
