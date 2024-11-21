@@ -74,7 +74,7 @@
   animation: color-fill 2s infinite;
 }
 
-@keyframes color-fill {
+/* @keyframes color-fill {
   0% {
     background-position: 0% 50%;
   }
@@ -84,7 +84,7 @@
   100% {
     background-position: 0% 50%;
   }
-}
+} */
 
 /* Content Hidden Initially */
 #content {
